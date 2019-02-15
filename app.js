@@ -37,8 +37,8 @@ app.post('/send', (req, res) => {
         port: 587,
         secure: false, // true for 465, false for other ports
         auth: {
-          user: "postmaster@leslieslessons.com", 
-          pass: "3214248d7f8d3829ca26a79fc623d3ac-3939b93a-2279fad9"  
+          user: NODEMAILER_USER, 
+          pass: NODEMAILER_PASS  
         },
         tls:{
             rejectUnauthorized: false
