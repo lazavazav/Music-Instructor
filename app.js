@@ -6,6 +6,7 @@ const nodemailer = require('nodemailer');
 const dotenv = require('dotenv').config();
 
 const app = express();
+const hbs = exphbs.create({})
 //view engine setup
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
@@ -19,7 +20,7 @@ app.use(bodyParser.json());
 
 //routes
 app.get('/', (req, res) => {
-    res.render('contact');
+    res.render('contact', {layout: false});
 });
 
 app.post('/send', (req, res) => {
